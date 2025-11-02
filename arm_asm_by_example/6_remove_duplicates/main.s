@@ -1,6 +1,6 @@
 /*
 This program deduplicates characters in a string but can more generally
-deduplicate bytes in a byte sequence.s
+deduplicate bytes in a byte sequence
 
          Uses:
         - r0 to store the memory adress of the input string
@@ -50,7 +50,9 @@ loop:
         b       loop
 
 exit:
+        print   before
         print   input
+        print   after
         print   output
 
         mov     r7, #1
@@ -58,7 +60,10 @@ exit:
         svc     0
 
 .data
-input:  .string     "Stticckkkyy keeyyboaaarrrdd!!!\n\n"
-output: .fill       128, 1, 0       // Since the reserved space for the output
+input:  .string         "Stticckkkyy keeyyboaaarrrdd!!!\n\n"
+output: .fill           128, 1, 0   // Since the reserved space for the output
                                     // string is prefilled with zeros, we won't
                                     // need to append a null byte
+
+before: .string         "Before: "
+after: .string          "After: "
