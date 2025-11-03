@@ -39,7 +39,7 @@ if [ -z "$PROGRAM" ]; then
     print_usage 1
 fi
 
-FOLDER=$(find -type d -name "${PROGRAM}_*" -print -quit)
+FOLDER=$(find src -type d -name "${PROGRAM}_*" -print -quit)
 
 if [ -z "$FOLDER" ]; then
     log_error "Did not find a program with number $PROGRAM"
