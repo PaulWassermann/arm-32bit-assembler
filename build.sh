@@ -28,7 +28,7 @@ while getopts "p:dvh" flags
 do 
     case "${flags}" in
         p)PROGRAM="$OPTARG";;
-        d)DEBUG_OPTS="-g";;
+        d)DEBUG_OPTS="-g -D --warn --info --fatal-warnings";;
         h)print_usage 0;;
         *)print_usage 1;;
     esac
