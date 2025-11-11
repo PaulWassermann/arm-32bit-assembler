@@ -3,3 +3,6 @@ tui layout split
 
 # Set breakpoint to _start entrypoint
 break _start
+
+# Run program until first breakpoint
+run
