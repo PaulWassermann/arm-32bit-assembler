@@ -39,7 +39,7 @@ release: $(RELEASE_TARGET)
 
 $(RELEASE_DIR)/$(OBJ_DIR)/%.o: $(SRC_DIR)/%.s
 	@mkdir -p $(RELEASE_DIR)/$(OBJ_DIR)
-	$(ASC) $(DEBUG_FLAGS) -o $@ $<
+	$(ASC) $(RELEASE_FLAGS) -o $@ $<
 
 $(RELEASE_TARGET): $(RELEASE_OBJS)
 	@mkdir -p $(RELEASE_DIR)/$(BIN_DIR)
