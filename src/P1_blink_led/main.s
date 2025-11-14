@@ -10,10 +10,11 @@
 .word 0x080000ed
 .space 0xe4
 
-// Clock related addresses
+// Reset and Clock Control module
 .equ    RCC_ADDR,       0x40021000
-.equ    RCC_AHBENR,     (RCC_ADDR + 0x14)           // AHB peripheral clock
-                                                    // enable register
+.equ    RCC_AHBENR,     (RCC_ADDR + 0x14)       // Advanced High-performance
+                                                // bus peripheral clock enable 
+                                                // register
 .equ    RCC_GPIOE,      (1 << 21)
 
 // GPIOE port related addresses
@@ -52,7 +53,7 @@ blink:
         eor     r1, #(1 << PIN)
         str     r1, [r0]
 
-        mov     r2, #0x20000
+        mov     r2, #0x200000
 
 delay:
         subs    r2, #1
